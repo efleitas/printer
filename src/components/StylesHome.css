@@ -1,0 +1,13 @@
+.none {
+	border-style: none;
+	background-color: Transparent;
+}
+
+.none:hover {
+	text-decoration: underline;
+}
+
+.none:focus,
+.none:active {
+	outline: none;
+}
