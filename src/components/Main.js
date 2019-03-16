@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Head from './Head.js';
 import Body from './Body.js';
 import Footer from './Footer.js';
@@ -11,9 +10,9 @@ class Main extends Component {
     
     return (
     	<div>
-		    <Head />
-		    <Body />
-		    <Footer />
+			<Head />
+			<Body />
+	    	<Footer />	    
 	   	</div>
 	)	      	
   }

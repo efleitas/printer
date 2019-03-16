@@ -13,9 +13,7 @@ const getWidth = () => {
 class DesktopContainer extends Component {
   constructor(){
     super();
-    this.state = { 
-      activeItem: 'Imprimir'
-    }
+    this.state = { }
     this.handleItemClick=this.handleItemClick.bind(this);
   }
 
@@ -31,37 +29,50 @@ class DesktopContainer extends Component {
           .catch(error => console.log(`Error ${error.code}: ${error.message}`)); 
     }
 
+  handleSidebarHide = () => this.setState({ sidebarOpened: false })
+
+  handleToggle = () => this.setState({ sidebarOpened: true })
+
+
   render() {
     const { children } = this.props
+    const { sidebarOpened } = this.state
 
     const trigger = (
       <span>
-        <Icon name='user'/> user.displayName
+        <Icon name='user'/> Fleitas ezequiel
         <Icon name='dropdown' />
       </span>
     )
 
-    const { activeItem } = this.state
-
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+          <Sidebar
+          as={Menu}
+          animation='overlay'
+          onHide={this.handleSidebarHide}
+          vertical
+          visible={sidebarOpened}
+        >
+          <Menu.Item> </Menu.Item>
+          <Menu.Item><Link to='/main' style={{color: 'black'}}>Imprimir</Link></Menu.Item>
+          <Menu.Item><Link to='/pedidos' style={{color: 'black'}}>Mis pedidos</Link></Menu.Item>
+          <Menu.Item><Link to='/contacto' style={{color: 'black'}}>Contacto</Link></Menu.Item>
+        </Sidebar>
+
+        <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             textAlign='center'
-            style={{padding: '1em 0em' }}
+            style={{ padding: '0em 0em', marginBottom: '2em'}}
             vertical
           >
-            <Menu
-              fixed
-              pointing
-              secondary
-              size='large'
-            >
-              <Container>
-                <Menu.Item name='Imprimir' active={activeItem === 'Imprimir'} onClick={this.handleItemClick}><Link to='/' style={{color: 'black'}}>Imprimir</Link></Menu.Item>
-                <Menu.Item name='Mis pedidos' active={activeItem === 'Mis pedidos'} onClick={this.handleItemClick}><Link to='/pedido' style={{color: 'black'}}>Mis pedidos</Link></Menu.Item>
-                <Menu.Item name='Contacto' active={activeItem === 'Contacto'} onClick={this.handleItemClick}><Link to='/contacto' style={{color: 'black'}}>Contacto</Link></Menu.Item>
+            <Container style={{ width: '100%'}}>
+              <Menu pointing secondary size='massive' >
+                <Menu.Item onClick={this.handleToggle}>
+                  <Icon name='sidebar'/>
+                </Menu.Item>
                 <Menu.Menu position='right'>
-                  <Dropdown trigger={trigger} direction='left'  icon={null} style={{padding: '0.2em 0em'}} pointing='top right'>
+                  <Dropdown text={trigger} direction='left' pointing='top' icon={null} style={{paddingTop: '10px'}}>
                     <Dropdown.Menu>
                       <Dropdown.Item disabled>
                         <span>
@@ -76,11 +87,12 @@ class DesktopContainer extends Component {
                     </Dropdown.Menu>
                   </Dropdown>
                 </Menu.Menu>
-              </Container>
-
-            </Menu>
-            
+              </Menu>
+            </Container>
           </Segment>
+
+          {children}
+        </Sidebar.Pusher>
 
         {children}
       </Responsive>
@@ -129,17 +141,17 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item></Menu.Item>
-          <Menu.Item as='a' >Imprimir</Menu.Item>
-          <Menu.Item as='a'>Mis pedidos</Menu.Item>
-          <Menu.Item as='a'>Contacto</Menu.Item>
+          <Menu.Item> </Menu.Item>
+          <Menu.Item><Link to='/main' style={{color: 'black'}}>Imprimir</Link></Menu.Item>
+          <Menu.Item><Link to='/pedidos' style={{color: 'black'}}>Mis pedidos</Link></Menu.Item>
+          <Menu.Item><Link to='/contacto' style={{color: 'black'}}>Contacto</Link></Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             
             textAlign='center'
-            style={{ minHeight: 250, padding: '1em 0em'}}
+            style={{ minHeight: 250, padding: '0em 0em'}}
             vertical
           >
             <Container>
@@ -148,7 +160,7 @@ class MobileContainer extends Component {
                   <Icon name='sidebar' />
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                  <Dropdown trigger={trigger} direction='left'  icon={null} style={{padding: '0.2em 0em'}}>
+                  <Dropdown trigger={trigger} direction='left' pointing='top' icon={null} style={{paddingTop: '10px'}}>
                     <Dropdown.Menu>
                       <Dropdown.Item disabled>
                         <span>

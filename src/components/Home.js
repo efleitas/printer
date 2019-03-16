@@ -41,6 +41,10 @@ class Inicio extends Component {
     window.location = "/registrado";
   }
 
+  redirectLogin() {
+    window.location = "/main";
+  }
+
   renderRegister() {
     this.setState( {
       value: "notRegistered"
@@ -90,7 +94,6 @@ class Inicio extends Component {
                     fluid
                     placeholder='Repetir contraseña'
                     type='password'
-                   
                   />
                   <Form.Field>
                     <Button fluid size='large' color='blue' onClick={this.redirectRegister}>
@@ -135,7 +138,7 @@ class Inicio extends Component {
                     type='password'
                   />
                   <Form.Field>
-                    <Button fluid size='large' color='blue'>
+                    <Button fluid size='large' color='blue' onClick={this.redirectLogin}>
                       Iniciar sesion
                     </Button>
                   </Form.Field>

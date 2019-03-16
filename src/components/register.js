@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Header, Message} from 'semantic-ui-react'
 
-
 const Register = () => (
   <div>
     <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>

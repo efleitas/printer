@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import { Button, Grid, Header, Icon, Segment } from 'semantic-ui-react';
-
 
 class Body extends Component {
 
