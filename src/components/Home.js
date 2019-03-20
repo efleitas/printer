@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Button, Container, Divider, Form, Grid, Header, Label, Message, Segment, Icon } from 'semantic-ui-react'
 import firebase from 'firebase'
-import Main from 'C:/Users/Ezequiel/printer/src/components/Main.js'
+import Main from './Main.js'
 import './StylesHome.css'
 
 class Inicio extends Component {
