@@ -25,7 +25,9 @@ class DesktopContainer extends Component {
 
   handleLogout() {
     firebase.auth().signOut()
-          .then(result => console.log(`${result.user.email} ha iniciado sesion`))
+          .then(function (result) {
+           window.location = "/"
+          })
           .catch(error => console.log(`Error ${error.code}: ${error.message}`)); 
     }
 
@@ -179,7 +181,6 @@ class MobileContainer extends Component {
             </Container>
           </Segment>
 
-          {children}
         </Sidebar.Pusher>
       </Responsive>
     )

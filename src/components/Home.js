@@ -30,11 +30,13 @@ class Inicio extends Component {
       const provider = new firebase.auth.GoogleAuthProvider();
 
       firebase.auth().signInWithPopup(provider)
-        .then(result => console.log(`${result.user.email} ha iniciado sesion`))//dentro de la consola imprime el mail y ese comentario
+        .then(function (result) {
+          return console.log(`${result.user.email} ha iniciado sesion`)
+        })//dentro de la consola imprime el mail y ese comentario
         .catch(function (error) {
           return console.log(`Error ${error.code}: ${error.message}`)
         })
-        //lo que esta dentro del catch es la forma resuma de lo que esta dentro del then
+        //lo que esta dentro del catch es la forma resumida de lo que esta dentro del then
     }
 
   redirectRegister() {
@@ -61,18 +63,18 @@ class Inicio extends Component {
   renderPage() {
       //Si esta login
       if (this.state.user) {
-        return(
+        return (
           <div>
             <Main />
           </div>
-          );
+          )
       } else {
         //Sino esta login
         //Sino esta registrado
         if (this.state.value) {
           return(
             <div>
-              <Header as='h2' textAlign='center' color='blue'>
+              <Header as='h2' textAlign='center'>
                 Registrate
               </Header>
               <Form size='large'>
@@ -96,7 +98,7 @@ class Inicio extends Component {
                     type='password'
                   />
                   <Form.Field>
-                    <Button fluid size='large' color='blue' onClick={this.redirectRegister}>
+                    <Button fluid size='large' color='grey' onClick={this.redirectRegister}>
                       Registrarse
                     </Button>
                   </Form.Field>
@@ -124,7 +126,7 @@ class Inicio extends Component {
           return(
             //si esta registrado
             <div>
-              <Header as='h2' textAlign='center' color='blue'>
+              <Header as='h2' textAlign='center'>
                 Inicia sesión
               </Header>
               <Form size='large'>
@@ -138,7 +140,7 @@ class Inicio extends Component {
                     type='password'
                   />
                   <Form.Field>
-                    <Button fluid size='large' color='blue' onClick={this.redirectLogin}>
+                    <Button fluid size='large' onClick={this.redirectLogin}>
                       Iniciar sesion
                     </Button>
                   </Form.Field>
