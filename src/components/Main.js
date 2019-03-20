@@ -19,7 +19,7 @@ import {
 import firebase from 'firebase';
 import {Link} from 'react-router-dom'
 import Documents from './Documents.js'
-import {files} from 'C:/Users/Ezequiel/printer/src/files.json'
+import {files} from '../files.json'
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'

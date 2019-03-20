@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Container, Grid, Header, Icon, Segment } from 'semantic-ui-react';
 import './StylesMain.css'
 import Documents from './Documents.js'
-import {files} from 'C:/Users/Ezequiel/printer/src/files.json'
+import {files} from '../files.json'
 
 class Body extends Component {
 	constructor() {
