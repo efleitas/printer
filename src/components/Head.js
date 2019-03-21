@@ -1,8 +1,23 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import {
+  Button,
+  Container,
+  Divider,
+  Dropdown,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
 import firebase from 'firebase';
 import {Link} from 'react-router-dom'
-import {Container,Dropdown, Icon, Menu, Responsive, Segment, Sidebar} from 'semantic-ui-react';
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
@@ -35,14 +50,13 @@ class DesktopContainer extends Component {
 
   handleToggle = () => this.setState({ sidebarOpened: true })
 
-
   render() {
     const { children } = this.props
     const { sidebarOpened } = this.state
 
     const trigger = (
       <span>
-        <Icon name='user'/> Fleitas ezequiel
+        <Icon name='user circle' size='large' color='black'/> Fleitas ezequiel
         <Icon name='dropdown' />
       </span>
     )
@@ -78,7 +92,7 @@ class DesktopContainer extends Component {
                     <Dropdown.Menu>
                       <Dropdown.Item disabled>
                         <span>
-                          Login with <strong>Fleitas ezequiel</strong>
+                          Logueado como <strong>Fleitas ezequiel</strong>
                         </span>
                       </Dropdown.Item>
                       <Dropdown.Item  icon='user' text='Mi perfil' />
@@ -95,8 +109,6 @@ class DesktopContainer extends Component {
 
           {children}
         </Sidebar.Pusher>
-
-        {children}
       </Responsive>
     )
   }
@@ -115,7 +127,9 @@ class MobileContainer extends Component {
 
   handleLogout() {
     firebase.auth().signOut()
-          .then(result => console.log(`${result.user.email} ha iniciado sesion`))
+          .then(function (result) {
+           window.location = "/"
+          })
           .catch(error => console.log(`Error ${error.code}: ${error.message}`)); 
     }
 
@@ -125,7 +139,7 @@ class MobileContainer extends Component {
 
     const trigger = (
       <span>
-        <Icon name='user secret' /> Fleitas ezequiel
+        <Icon name='user circle' size='large' color='black' /> Fleitas ezequiel
         <Icon name='dropdown' />
       </span>
     )
@@ -151,9 +165,8 @@ class MobileContainer extends Component {
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
-            
             textAlign='center'
-            style={{ minHeight: 250, padding: '0em 0em'}}
+            style={{ padding: '0em 0em', marginBottom: '2em'}}
             vertical
           >
             <Container>
@@ -166,7 +179,7 @@ class MobileContainer extends Component {
                     <Dropdown.Menu>
                       <Dropdown.Item disabled>
                         <span>
-                          Login with <strong>Fleitas ezequiel</strong>
+                          Logueado como <strong>Fleitas ezequiel</strong>
                         </span>
                       </Dropdown.Item>
                       <Dropdown.Item  icon='user' text='Mi perfil' />
@@ -178,9 +191,9 @@ class MobileContainer extends Component {
                   </Dropdown>
                 </Menu.Menu>
               </Menu>
-            </Container>
+            </Container>           
           </Segment>
-
+          {children}
         </Sidebar.Pusher>
       </Responsive>
     )
@@ -191,20 +204,15 @@ MobileContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const ResponsiveContainer = ({ children }) => (
+const Head = ({ children }) => (
   <div>
     <DesktopContainer>{children}</DesktopContainer>
     <MobileContainer>{children}</MobileContainer>
   </div>
 )
 
-ResponsiveContainer.propTypes = {
+Head.propTypes = {
   children: PropTypes.node,
 }
 
-const HomepageLayout = () => (
-  <ResponsiveContainer>
-    
-  </ResponsiveContainer>
-)
-export default HomepageLayout
+export default Head;

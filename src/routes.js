@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import App from './App.js';
-import Home from './components/Home.js';
-import Register from './components/register.js';
-import Main from './components/Main.js';
-import Contact from './components/Contact.js';
-import Orders from './components/Orders.js';
+import Home from './Home.js';
+import Register from './components/Register.js';
+import Main from './Main.js';
+import Contact from './Contact.js';
+import Orders from './Orders.js';
 import Page404 from './components/Page404.js';
 import Test from './components/Test.js';
 

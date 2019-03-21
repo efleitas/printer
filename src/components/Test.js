@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Container, Grid, Header, Icon, Segment } from 'semantic-ui-react';
-import './StylesMain.css'
+import '../styles/Main.css'
 import Documents from './Documents.js'
 import {files} from '../files.json'
 

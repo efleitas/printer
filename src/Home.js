@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Button, Container, Divider, Form, Grid, Header, Label, Message, Segment, Icon } from 'semantic-ui-react'
 import firebase from 'firebase'
 import Main from './Main.js'
-import './StylesHome.css'
+import './styles/Home.css'
 
 class Inicio extends Component {
   	constructor() {

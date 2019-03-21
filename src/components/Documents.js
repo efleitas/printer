@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Container, Form, Header, Icon, Segment} from 'semantic-ui-react'
-import './StylesMain.css'
+import '../styles/Main.css'
 
 class inputFile extends Component {
 	constructor() {

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter as Routes} from 'react-router-dom';
 import firebase from 'firebase';
-import AppRoutes from './routes.js'
-import './index.css';
+import AppRoutes from './Routes.js'
+import './styles/index.css';
 import * as serviceWorker from './serviceWorker';
 
 
