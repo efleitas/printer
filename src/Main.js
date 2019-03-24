@@ -1,27 +1,17 @@
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
   Button,
   Container,
-  Divider,
-  Dropdown,
   Grid,
   Header,
-  Icon,
-  Image,
   List,
-  Menu,
-  Responsive,
   Segment,
-  Sidebar,
-  Visibility,
 } from 'semantic-ui-react'
-import firebase from 'firebase';
-import {Link} from 'react-router-dom'
 import Documents from './components/Documents.js'
 import Head from './components/Head.js'
+import Footer from './components/Footer.js'
 import {files} from './files.json'
-
 
 class Main extends Component {
   constructor() {
@@ -76,44 +66,11 @@ class Main extends Component {
 
     return(
       <Head>
-          <Documents onAddFile={this.handleAddTask} cantidad={this.state.files.length}></Documents>
-            <Segment.Group style={{width:'80%', margin: '2em auto', borderColor:'grey'}}>
-              {files}
-            </Segment.Group>
-        <Segment inverted vertical style={{ padding: '5em 0em'}}>
-          <Container>
-            <Grid divided inverted stackable>
-              <Grid.Row>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='About' />
-                  <List link inverted>
-                    <List.Item as='a'>Sitemap</List.Item>
-                    <List.Item as='a'>Contact Us</List.Item>
-                    <List.Item as='a'>Religious Ceremonies</List.Item>
-                    <List.Item as='a'>Gazebo Plans</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='Services' />
-                  <List link inverted>
-                    <List.Item as='a'>Banana Pre-Order</List.Item>
-                    <List.Item as='a'>DNA FAQ</List.Item>
-                    <List.Item as='a'>How To Access</List.Item>
-                    <List.Item as='a'>Favorite X-Men</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={7}>
-                  <Header as='h4' inverted>
-                    Footer Header
-                  </Header>
-                  <p>
-                    Extra space for a call to action inside the footer that could help re-engage users.
-                  </p>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Container>
-        </Segment>
+        <Documents onAddFile={this.handleAddTask} cantidad={this.state.files.length}></Documents>
+        <Segment.Group style={{width:'80%', margin: '2em auto', borderColor:'grey'}}>
+          {files}
+        </Segment.Group>
+        <Footer />
       </Head>
 
       )

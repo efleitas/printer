@@ -1,20 +1,13 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
-  Button,
   Container,
-  Divider,
   Dropdown,
-  Grid,
-  Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
 } from 'semantic-ui-react'
 import firebase from 'firebase';
 import {Link} from 'react-router-dom'

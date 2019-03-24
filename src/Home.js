@@ -1,6 +1,6 @@
 //Dependencies
 import React, { Component } from 'react'
-import { Button, Container, Divider, Form, Grid, Header, Label, Message, Segment, Icon } from 'semantic-ui-react'
+import { Button, Divider, Form, Grid, Header, Label, Message, Segment, Icon } from 'semantic-ui-react'
 import firebase from 'firebase'
 import Main from './Main.js'
 import './styles/Home.css'
@@ -171,18 +171,17 @@ class Inicio extends Component {
   render() {
     return (
       <div className='login-form'>
-        <Grid style={{ height: '100%', margin: '0' }}  stackable reversed='computer tablet'>
+        <Grid style={{ height: '100%', margin: '0em' }}  stackable reversed='computer tablet'>
           <Grid.Row style={{ padding: '0' }} columns={2}>
             <Grid.Column computer={5} style={{paddingRight: '4em', paddingLeft: '3em'}} textAlign='center' verticalAlign='middle'> 
               {this.renderPage()}
             </Grid.Column>
-            <Grid.Column computer={11} style={{background: '#2e4453'}}>
-              <Container style={{height: '15%'}}>
-                <Icon name='shipping fast' style={{color:'white', padding:'0.2em'}} size='big'>
-                  Guille envios
-                </Icon>
-              </Container>
-              <Container textAlign='center' style={{color:'white', height: '70%'}}>
+            <Grid.Column computer={11} style={{background: '#2e4453', padding: '0'}}>
+              <Segment vertical style={{height: '20%', border: '0'}}>
+                <Icon name='shipping' size='big'><Header as='h3'>Guille envios</Header></Icon>
+                
+              </Segment>
+              <Segment vertical style={{height: '65%', border: '0'}}>
                 <p >
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                   Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
@@ -191,13 +190,13 @@ class Inicio extends Component {
                   In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
                   link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
                 </p>
-              </Container>
-              <Container textAlign='right' style={{height: '15%', padding:'0.2em'}}> 
+              </Segment>
+              <Segment vertical textAlign='center' style={{height: '15%', border: '0'}}> 
                 <Divider />
                 <Button circular color='facebook' icon='facebook' />
                 <Button circular color='twitter' icon='twitter' />
                 <Button circular color='google plus' icon='google plus' />              
-              </Container>
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -5,10 +5,7 @@ import { BrowserRouter as Routes} from 'react-router-dom';
 import firebase from 'firebase';
 import AppRoutes from './Routes.js'
 import './styles/index.css';
-import * as serviceWorker from './serviceWorker';
 
-
-// Initialize Firebase
 firebase.initializeApp( {
     apiKey: "AIzaSyDTs2LgMJ2-EKPyBbJw9D9k2SSCXOMTX6I",
     authDomain: "printer-1992.firebaseapp.com",
@@ -20,8 +17,3 @@ firebase.initializeApp( {
  );
 
 ReactDOM.render(<Routes><AppRoutes /></Routes>, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Container, Form, Header, Icon, Segment} from 'semantic-ui-react'
+import {Container, Form, Header, Icon, Segment} from 'semantic-ui-react'
 import '../styles/Main.css'
 
 class inputFile extends Component {
@@ -32,7 +32,7 @@ class inputFile extends Component {
     
     Array.prototype.forEach.call( inputs, function( input )
       {
-      var label= document.getElementById('texto'), labelVal = label.value;
+      var label= document.getElementById('texto')
       input.addEventListener('change', function( e )
       {
         var fileName = '';
