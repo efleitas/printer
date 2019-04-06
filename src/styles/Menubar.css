@@ -1,0 +1,99 @@
+/*menubar vertical*/
+.vertical-nav {
+  background: white;
+  border-right: 1px solid rgba(34,36,38,.15);
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  -webkit-transition:width .05s linear;
+  transition:width .05s linear;
+  -webkit-transform:translateZ(0) scale(1,1);
+  z-index:1;
+}
+.vertical-nav:hover {
+  width: 350%;
+  overflow:visible;
+}
+
+
+/*unordered list*/
+.vertical-nav ul {
+  list-style: none; 
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*items list*/
+.vertical-nav ul li {
+  min-height: 5em;
+  display: flex;
+  flex-direction: row;
+}
+
+
+/*item list header*/
+.vertical-nav:hover ul li.head{
+  border-bottom: 1px solid rgba(34,36,38,.15);
+}
+
+/*links*/
+.vertical-nav ul li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.vertical-nav ul li a:hover {
+  border: 1px solid rgba(34,36,38,.15);
+  background-color: #f9fafb;
+}
+.vertical-nav ul li.head a img {
+  margin: 0% 30%;
+}
+.vertical-nav:hover ul li.head a img {
+  margin: 0% 11%;
+}
+
+
+/*icons*/
+.vertical-nav ul li a #items {
+  font-size: 1.5em;
+  padding: 0% 40%;
+}
+.vertical-nav:hover ul li a #items {
+  padding: 0% 13.33%;
+}
+
+
+/*span text*/
+.vertical-nav ul li a #items span {
+  color: #72777a;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  padding-left: 2em;
+}
+.vertical-nav ul li.head a span.header {
+  color: #212529;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-size: 1.8em;
+  margin: 0% 0%; 
+}
+.vertical-nav ul li a #items span:hover {
+  color: #212529;
+}
+
+
+
+
+
+
+
+

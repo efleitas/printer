@@ -24,6 +24,7 @@ class Inicio extends Component {
         user: user
       });
     })
+
   }
 
   handleAuth () {
@@ -31,7 +32,7 @@ class Inicio extends Component {
 
       firebase.auth().signInWithPopup(provider)
         .then(function (result) {
-          return console.log(`${result.user.email} ha iniciado sesion`)
+          return console.log(`${result.user.mail} ha iniciado sesion`)
         })//dentro de la consola imprime el mail y ese comentario
         .catch(function (error) {
           return console.log(`Error ${error.code}: ${error.message}`)
@@ -74,7 +75,7 @@ class Inicio extends Component {
         if (this.state.value) {
           return(
             <div>
-              <Header as='h2' textAlign='center'>
+              <Header as='h2' textAlign='center' color='blue'>
                 Registrate
               </Header>
               <Form size='large'>
@@ -98,7 +99,7 @@ class Inicio extends Component {
                     type='password'
                   />
                   <Form.Field>
-                    <Button fluid size='large' color='grey' onClick={this.redirectRegister}>
+                    <Button fluid size='large' color='blue' onClick={this.redirectRegister}>
                       Registrarse
                     </Button>
                   </Form.Field>
@@ -126,7 +127,7 @@ class Inicio extends Component {
           return(
             //si esta registrado
             <div>
-              <Header as='h2' textAlign='center'>
+              <Header as='h2' textAlign='center' color='blue'>
                 Inicia sesión
               </Header>
               <Form size='large'>
@@ -140,7 +141,7 @@ class Inicio extends Component {
                     type='password'
                   />
                   <Form.Field>
-                    <Button fluid size='large' onClick={this.redirectLogin}>
+                    <Button fluid size='large' onClick={this.redirectLogin} color='blue'>
                       Iniciar sesion
                     </Button>
                   </Form.Field>
@@ -191,7 +192,7 @@ class Inicio extends Component {
                   link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
                 </p>
               </Segment>
-              <Segment vertical textAlign='center' style={{height: '15%', border: '0'}}> 
+              <Segment vertical textAlign='right' style={{height: '15%', border: '0'}}> 
                 <Divider />
                 <Button circular color='facebook' icon='facebook' />
                 <Button circular color='twitter' icon='twitter' />

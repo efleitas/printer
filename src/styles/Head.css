@@ -1,0 +1,71 @@
+/*unordered list*/
+.menu ul {
+  list-style: none; 
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*items list*/
+.menu ul li {
+  border-bottom: 1px solid rgba(34,36,38,.15);
+  min-height: 5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*item list header*/
+.menu ul li.menu-head{
+  border-bottom: 1px solid rgba(34,36,38,.15);
+}
+
+/*links*/
+.menu ul li a {
+  height: 69px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*images*/
+.menu ul li.menu-head a img {
+  margin: 0% 30%;
+}
+.menu ul li.menu-head a img {
+  margin: 0% 11%;
+}
+
+/*icons*/
+.menu ul li a #menu-items {
+  font-size: 1.5em;
+  padding: 0% 40%;
+}
+.menu ul li a #menu-items {
+  padding: 0% 13.33%;
+}
+
+/*span text*/
+.menu ul li a #menu-items span {
+  color: #72777a;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  padding-left: 2em;
+}
+.menu ul li.menu-head a span.menu-header {
+  color: #212529;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-size: 1.8em;
+  margin: 0% 0%; 
+}
+
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@
 }
 
 .inputfile + label {
-    font-size: 1.4571429em;
+    font-size: 1.5571429em;
     font-weight: 700;
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
     color: 'black';
@@ -30,7 +30,7 @@
     border-style: none;
 } 
 
-.btn-red {
+.btn-blue {
     border-radius: .28571429rem;
     font-size: 1.2571429em;
     font-weight: 700;

@@ -79,7 +79,7 @@ class inputFile extends Component {
 				        <button 
 			            	id='btn' 
 			            	type='sumbit' 
-			            	className='btn btn-red disable' 
+			            	className='btn btn-blue disable' 
 			            	disabled>
 			            	Agregar
 			            </button>

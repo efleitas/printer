@@ -2,12 +2,10 @@
 import React, { Component } from 'react'
 import {
   Button,
-  Container,
   Grid,
-  Header,
-  List,
   Segment,
 } from 'semantic-ui-react'
+import Menubar from './components/Menubar.js'
 import Documents from './components/Documents.js'
 import Head from './components/Head.js'
 import Footer from './components/Footer.js'
@@ -65,16 +63,24 @@ class Main extends Component {
     })
 
     return(
-      <Head>
-        <Documents onAddFile={this.handleAddTask} cantidad={this.state.files.length}></Documents>
-        <Segment.Group style={{width:'80%', margin: '2em auto', borderColor:'grey'}}>
-          {files}
-        </Segment.Group>
-        <Footer />
-      </Head>
+      <Grid style={{margin: '0em'}}>
+        <Grid.Column computer={1} only='computer' style={{padding: '0em'}}>
+          <Menubar />
+      </Grid.Column>
+      <Grid.Column computer={15} mobile={16} tablet={16} style={{padding: '0em'}}>
+        <Head>
+          <Documents onAddFile={this.handleAddTask} cantidad={this.state.files.length}></Documents>
+          <Segment.Group style={{width:'80%', margin: '2em auto', borderColor:'grey'}}>
+            {files}
+          </Segment.Group>
+          <Footer />
+        </Head>
+      </Grid.Column>
+      </Grid> 
 
       )
   }
 }
   
 export default Main;
+

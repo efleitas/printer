@@ -4,13 +4,16 @@ import {
   Container,
   Dropdown,
   Icon,
+  Image,
   Menu,
   Responsive,
   Segment,
   Sidebar,
 } from 'semantic-ui-react'
 import firebase from 'firebase';
-import {Link} from 'react-router-dom'
+import foto from '../images/foto.jpg'
+import logo from '../images/logo.png'
+import '../styles/Head.css'
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
@@ -49,24 +52,58 @@ class DesktopContainer extends Component {
 
     const trigger = (
       <span>
-        <Icon name='user circle' size='large' color='black'/> Fleitas ezequiel
+        <Image src={foto} avatar/> Fleitas ezequiel
         <Icon name='dropdown' />
       </span>
     )
 
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
-          <Sidebar
+        <Sidebar
           as={Menu}
           animation='overlay'
           onHide={this.handleSidebarHide}
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item> </Menu.Item>
-          <Menu.Item><Link to='/main' style={{color: 'black'}}>Imprimir</Link></Menu.Item>
-          <Menu.Item><Link to='/pedidos' style={{color: 'black'}}>Mis pedidos</Link></Menu.Item>
-          <Menu.Item><Link to='/contacto' style={{color: 'black'}}>Contacto</Link></Menu.Item>
+          <div className='menu'>
+            <ul>
+            <li className='menu-head'>       
+              <a href="/">
+                <img src={logo} alt='logo'/>
+                <span className='menu-header'>Bienvenido</span>
+              </a>      
+            </li>
+            <li>
+              <a href="/main">
+                <Icon name='print' size='large' color='teal' id='menu-items'>
+                  <span>Imprimir</span>
+                </Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/pedidos">
+                <Icon name='file outline' size='large' color='red' id='menu-items'>
+                  <span>Pedidos</span>
+                </Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/contacto">
+                <Icon name='mail outline' size='large' color='violet' id='menu-items'>
+                  <span>Contacto</span>
+                </Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/test">
+                <Icon name='book' size='large' color='black' id='menu-items' >
+                  <span>Lectura</span>
+                </Icon>
+              </a>
+            </li>
+            </ul>
+          </div>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -76,12 +113,12 @@ class DesktopContainer extends Component {
             vertical
           >
             <Container style={{ width: '100%'}}>
-              <Menu pointing secondary size='massive' >
-                <Menu.Item onClick={this.handleToggle}>
-                  <Icon name='sidebar'/>
+              <Menu secondary size='massive' style={{minHeight: '3.85714286em'}}>
+                <Menu.Item onClick={this.handleToggle} style={{backgroundColor: '#fff'}}>
+                    <Icon name='sidebar'/>
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                  <Dropdown text={trigger} direction='left' pointing='top' icon={null} style={{paddingTop: '10px'}}>
+                  <Dropdown text={trigger} direction='left' pointing='top' icon={null} style={{padding: '0.9em 0.1em'}}>
                     <Dropdown.Menu>
                       <Dropdown.Item disabled>
                         <span>
@@ -132,7 +169,7 @@ class MobileContainer extends Component {
 
     const trigger = (
       <span>
-        <Icon name='user circle' size='large' color='black' /> Fleitas ezequiel
+        <Image src={foto} avatar/> Fleitas ezequiel
         <Icon name='dropdown' />
       </span>
     )
@@ -150,10 +187,44 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item> </Menu.Item>
-          <Menu.Item><Link to='/main' style={{color: 'black'}}>Imprimir</Link></Menu.Item>
-          <Menu.Item><Link to='/pedidos' style={{color: 'black'}}>Mis pedidos</Link></Menu.Item>
-          <Menu.Item><Link to='/contacto' style={{color: 'black'}}>Contacto</Link></Menu.Item>
+          <div className='menu'>
+            <ul>
+            <li className='menu-head'>       
+              <a href="/">
+                <img src={logo} alt='logo'/>
+                <span className='menu-header'>Bienvenido</span>
+              </a>      
+            </li>
+            <li>
+              <a href="/main">
+                <Icon name='print' size='large' color='teal' id='menu-items'>
+                  <span>Imprimir</span>
+                </Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/pedidos">
+                <Icon name='file outline' size='large' color='red' id='menu-items'>
+                  <span>Pedidos</span>
+                </Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/contacto">
+                <Icon name='mail outline' size='large' color='violet' id='menu-items'>
+                  <span>Contacto</span>
+                </Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/test">
+                <Icon name='book' size='large' color='black' id='menu-items' >
+                  <span>Lectura</span>
+                </Icon>
+              </a>
+            </li>
+            </ul>
+          </div>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -163,12 +234,12 @@ class MobileContainer extends Component {
             vertical
           >
             <Container>
-              <Menu  pointing secondary size='large'>
-                <Menu.Item onClick={this.handleToggle}>
+              <Menu secondary size='large'>
+                <Menu.Item onClick={this.handleToggle} id='eventClick'>
                   <Icon name='sidebar' />
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                  <Dropdown trigger={trigger} direction='left' pointing='top' icon={null} style={{paddingTop: '10px'}}>
+                  <Dropdown trigger={trigger} direction='left' pointing='top' icon={null} style={{padding: '0.9em 0.1em'}}>
                     <Dropdown.Menu>
                       <Dropdown.Item disabled>
                         <span>
